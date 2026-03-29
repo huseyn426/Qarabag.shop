@@ -1,0 +1,150 @@
+:root {
+    --primary: #0047AB; 
+    --bg: #FFFFFF;
+    --text: #1a1a1a;
+}
+
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+/* Навигация */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 8%; background: #fff; border-bottom: 1px solid #f0f0f0;
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.logo { font-weight: 900; font-size: 1.6rem; text-decoration: none; color: #000; letter-spacing: -1px; }
+.logo span { color: var(--primary); }
+
+.nav-right { display: flex; align-items: center; gap: 30px; }
+
+.nav-link {
+    text-decoration: none; color: #000; font-weight: 700; font-size: 0.85rem;
+    text-transform: uppercase; cursor: pointer; transition: 0.3s;
+}
+.nav-link:hover { color: var(--primary); }
+
+/* Выбор языка */
+.lang-switcher { position: relative; cursor: pointer; }
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    display: none; /* Скрыто по умолчанию */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.lang-dropdown.show {
+    display: block; /* Показываем при клике */
+}
+
+.lang-dropdown div {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.lang-dropdown div:hover {
+    background: #f4f4f4;
+    color: #0047AB;
+}
+/* Hero секция */
+/* style.css */
+.hero {
+    height: 65vh; /* Уменьшили высоту секции с 80 до 65 */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('fon.png') no-repeat center center; 
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding-top: 60px; /* Небольшой сдвиг контента вниз для баланса */
+}
+
+.hero-content h1 {
+    font-size: 4rem; 
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 40px; /* Увеличили отступ снизу, чтобы спустить кнопку ниже */
+    opacity: 0.9;
+}
+
+/* Кнопка "Kolleksiyaya bax" */
+.btn-primary {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 16px 40px; /* Чуть увеличили размер кнопки для солидности */
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #0047AB; /* Твой фирменный синий при наведении */
+    transform: translateY(-3px);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh; /* На телефонах секция будет еще компактнее */
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+/* Витрина */
+.container { padding: 4rem 8%; }
+.filters { display: flex; gap: 15px; justify-content: center; margin-bottom: 50px; }
+.filter-btn { 
+    padding: 10px 25px; border: 1px solid #ddd; background: transparent; 
+    cursor: pointer; border-radius: 50px; font-weight: 700; transition: 0.3s; 
+}
+.filter-btn.active { background: #000; color: #fff; border-color: #000; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
+.product-card { transition: 0.4s; }
+.product-image { width: 100%; height: 380px; object-fit: cover; border-radius: 12px; background: #f5f5f5; }
+.product-info { padding: 15px 5px; text-align: left; }
+.product-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 5px; }
+.product-price { font-weight: 900; color: var(--primary); font-size: 1.2rem; }
+
+/* Футер */
+.footer { padding: 2.5rem 8%; background: #fff; border-top: 1px solid #eee; margin-top: 50px; }
+.footer-container { display: flex; justify-content: space-between; align-items: center; }
+.footer p { color: #888; font-size: 0.85rem; }
+
+.instagram-link { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #000; font-weight: 700; font-size: 0.85rem; transition: 0.3s; }
+.instagram-link:hover { color: var(--primary); transform: translateY(-2px); }
+.ig-icon { width: 18px; height: 18px; }
+
+.admin-hidden-link { opacity: 0; font-size: 1px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .footer-container { flex-direction: column; gap: 15px; text-align: center; }
+    .product-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+}

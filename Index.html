@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qarabag Shop | Premium Fanshop</title>
+    <link rel="icon" type="image/png" href="ShopLogo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center; text-decoration: none;">
+    <img src="ShopLogo.png" alt="Logo" style="height: 35px; width: auto; margin-right: 10px;">
+    QARABAG<span>.SHOP</span>
+</a>
+
+<div class="nav-right">
+    <a href="#shop-grid" class="nav-link" data-key="nav_products">Məhsullar</a>
+
+            <div class="lang-switcher">
+                <span class="nav-link lang-btn" onclick="toggleLangDropdown()">
+                    <span id="current-lang-text">AZ</span> <small>▼</small>
+                </span>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div onclick="changeLanguage('az')">AZ</div>
+                    <div onclick="changeLanguage('ru')">RU</div>
+                    <div onclick="changeLanguage('en')">EN</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+        <h1 data-key="hero_title">QARABAG.SHOP</h1> 
+        <p data-key="hero_subtitle">Qarabağ FK-nın əsl azarkeşləri üçün premium geyimlər.</p>
+        <a href="#shop-grid" class="btn-primary" data-key="hero_btn">Kolleksiyaya bax</a>
+    </div>
+</header>
+
+    <main class="container">
+        <section class="filters">
+    <button class="filter-btn active" onclick="filterProducts('all', this)" data-key="filter_all">Hamısı</button>
+    <button class="filter-btn" onclick="filterProducts('Hoodies', this)" data-key="filter_hoodies">Hudi</button>
+    <button class="filter-btn" onclick="filterProducts('T-shirts', this)" data-key="filter_tshirts">Köynəklər</button>
+    <button class="filter-btn" onclick="filterProducts('Scarfs', this)" data-key="filter_scarfs">Şərflər</button>
+    <button class="filter-btn" onclick="filterProducts('Other', this)" data-key="filter_other">Digər</button>
+</section>
+
+        <div id="shop-grid" class="product-grid" data-aos="fade-up"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Qarabag Shop. <span data-key="footer_rights">Bütün hüquqlar qorunur.</span></p>
+            
+            <a href="https://www.instagram.com/" target="_blank" class="instagram-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ig-icon">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+            </a>
+        </div>
+        <a href="#" onclick="adminAccess()" class="admin-hidden-link">.</a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ once: true, duration: 800 });</script>
+    <script src="script.js"></script>
+</body>
+</html>
